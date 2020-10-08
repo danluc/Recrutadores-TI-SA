@@ -4,6 +4,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
 import { AtualizarComponent } from './candidatos/atualizar/atualizar.component';
@@ -22,6 +25,8 @@ import { CadastrarComponent } from './candidatos/cadastrar/cadastrar.component';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+	  ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: 'candidatos', component: ListarComponent },
       { path: 'candidatos/cadastrar', component: CadastrarComponent },

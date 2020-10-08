@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 import { candidatos } from '../../models/candidatos';
 import { CandidatosService } from '../../services/candidatos.service';
@@ -14,7 +15,7 @@ export class CadastrarComponent implements OnInit {
 
   registerForm: FormGroup;
   candidato = candidatos;
-  constructor(private router: Router, private CandidatosService: CandidatosService, private fb: FormBuilder) { }
+  constructor(private router: Router, private CandidatosService: CandidatosService, private fb: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.Validar();
@@ -32,9 +33,10 @@ export class CadastrarComponent implements OnInit {
   Salvar() {
     this.CandidatosService.Cadastrar(this.registerForm.value).subscribe(
       (res) => {
-        this.router.navigate(['/candidatos'])
+        this.toastr.success('Cadastrado com Sucesso!');
+        this.router.navigate(['/candidatos']);
       }, error => {
-        console.log(error);
+        this.toastr.error(`Erro ao Cadastrar: ${error.message}`);
       }
     )
   }
