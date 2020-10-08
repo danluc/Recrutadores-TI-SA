@@ -8,7 +8,9 @@ namespace API.Interfaces
 {
     public interface ICandidatos
     {
-        Task<Candidatos[]> BuscarTodos();
-        bool Salva(Candidatos dados);
+        Task<Candidatos>    BuscarId(string id);
+        Task<Candidatos>    BuscarNome(string nome);
+        Task<Candidatos[]>  BuscarTodos();
+        void Salvar(Candidatos dados);
     }
 }
