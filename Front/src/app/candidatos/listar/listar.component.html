@@ -1,0 +1,29 @@
+<div class="card margin-top-50 shadow p-3 mb-5 bg-white rounded" >
+  <div class="card-body">
+    <h5 class="card-title">Candidatos</h5>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Linkedin</th>
+            <th scope="col">GitHub</th>
+            <th scope="col">Opção</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of Candidatos.dados">
+            <td>{{ d.nome }}</td>
+            <td>{{ d.telefone }}</td>
+            <td>{{ d.urlLinkedin }}</td>
+            <td>{{ d.usuarioGithub }}</td>
+            <td>
+              <a class="btn btn-info" routerLink="/candidatos/atualizar/{{d.id}}" >editar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
