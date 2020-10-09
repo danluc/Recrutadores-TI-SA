@@ -30,6 +30,7 @@ import { GithubComponent } from './candidatos/github/github.component';
     BrowserAnimationsModule,
 	  ToastrModule.forRoot(),
     RouterModule.forRoot([
+      { path: '', redirectTo: '/candidatos', pathMatch: 'full' },
       { path: 'candidatos', component: ListarComponent },
       { path: 'candidatos/cadastrar', component: CadastrarComponent },
       { path: 'candidatos/atualizar/:id', component: AtualizarComponent }
