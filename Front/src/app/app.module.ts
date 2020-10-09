@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AtualizarComponent } from './candidatos/atualizar/atualizar.component';
 import { ListarComponent } from './candidatos/listar/listar.component';
 import { CadastrarComponent } from './candidatos/cadastrar/cadastrar.component';
+import { GithubComponent } from './candidatos/github/github.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CadastrarComponent } from './candidatos/cadastrar/cadastrar.component';
     AppComponent,
     AtualizarComponent,
     ListarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    GithubComponent
   ],
   imports: [
     BrowserModule,
