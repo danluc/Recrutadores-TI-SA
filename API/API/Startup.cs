@@ -52,7 +52,7 @@ namespace API
                 c.CustomSchemaIds(x => x.FullName);
 
             });
-
+            services.AddHealthChecks();
             services.AddCors();
         }
 
@@ -74,7 +74,7 @@ namespace API
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
             });
-
+            app.UseHealthChecks("/status");
             //app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
